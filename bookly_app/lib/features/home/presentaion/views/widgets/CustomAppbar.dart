@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:bookly_app/core/assetsmodel.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class CustomAppbar extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(
                 Icons.search,
-                size: 32,
+                size: 30,
                 color: Colors.white,
               ))
         ],
