@@ -19,6 +19,7 @@ class _SplashBodyState extends State<SplashBody>
     super.initState();
     InitSlidinganimation();
     navigateTohomeview();
+    //single responsibilty principle
   }
 
   @override
