@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/assetsmodel.dart';
+import 'package:bookly_app/core/utlis/assetsmodel.dart';
 import 'package:bookly_app/features/home/presentaion/views/HomeView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +12,7 @@ class SplashBody extends StatefulWidget {
 
 class _SplashBodyState extends State<SplashBody>
     with SingleTickerProviderStateMixin {
-  late AnimationController animationController;
+  late AnimationController animationController; //values between 0 and 1
   late Animation<Offset> slidingAnimation;
   @override
   void initState() {
@@ -21,7 +21,6 @@ class _SplashBodyState extends State<SplashBody>
     navigateTohomeview();
     //single responsibilty principle
   }
-
   @override
   void dispose() {
     super.dispose();

@@ -1,5 +1,5 @@
 
-import 'package:bookly_app/core/assetsmodel.dart';
+import 'package:bookly_app/core/utlis/assetsmodel.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
