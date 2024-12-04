@@ -11,6 +11,7 @@ class RatingRow extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(right: 16),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             FontAwesomeIcons.solidStar,
@@ -28,7 +29,7 @@ class RatingRow extends StatelessWidget {
             width: 6.4,
           ),
           Text(
-            '(256)',
+            '(256898)',
             style: Styles.textstyle14,
           ),
         ],

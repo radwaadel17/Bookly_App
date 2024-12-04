@@ -20,7 +20,9 @@ class BookDetailsViewBody extends StatelessWidget {
         43),
          const Text('The Jungle Book' , style: Styles.textstyle30,),
          Text('Rudyard Kipling' , style: Styles.textstyle18.copyWith(fontStyle: FontStyle.italic , fontWeight: FontWeight.normal , color: Colors.white.withOpacity(0.7)),),
-         //const RatingRow(),
+         const SizedBox(height: 14,
+         ),
+         const RatingRow(),
         
         
       ],
