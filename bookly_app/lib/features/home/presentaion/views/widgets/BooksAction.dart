@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/BooksActionBody.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,7 @@ class BooksAction extends StatelessWidget {
           )),
           Expanded(
               child: BooksActionBody(
+                fontSize: 15,
             text: 'Free Preview',
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(12),
@@ -30,7 +32,9 @@ class BooksAction extends StatelessWidget {
             textColor: Colors.white,
             backgroundColor: Color.fromARGB(255, 255, 108, 108),
           )),
+          
         ],
+        
       ),
     );
   }
