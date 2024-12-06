@@ -14,6 +14,7 @@ class BookDetailsViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
+          hasScrollBody: false,
           child: Column(
             children: [
               const CustomAppBarForBookDetailsView(),
@@ -62,6 +63,7 @@ class BookDetailsViewBody extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
+
             ],
           ),
         )
