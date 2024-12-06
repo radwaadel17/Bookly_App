@@ -23,6 +23,7 @@ class _SplashBodyState extends State<SplashBody>
     navigateTohomeview();
     //single responsibilty principle
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -68,8 +69,8 @@ class _SplashBodyState extends State<SplashBody>
 
   void navigateTohomeview() {
     Future.delayed(const Duration(seconds: 2), () {
-     // Get.to(const HomeView(), transition: Transition.fade);
-     GoRouter.of(context).push(Approuter.kHomeView);
+      // Get.to(const HomeView(), transition: Transition.fade);
+      GoRouter.of(context).push(Approuter.kHomeView);
     });
   }
 }

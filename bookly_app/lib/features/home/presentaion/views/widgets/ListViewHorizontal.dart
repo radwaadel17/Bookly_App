@@ -11,11 +11,11 @@ class ListViewHorizontal extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(left: 16),
         child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 10,
-          itemBuilder: (context , index){
-            return const CustomBookImage();
-          }),
+            scrollDirection: Axis.horizontal,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return const CustomBookImage();
+            }),
       ),
     );
   }

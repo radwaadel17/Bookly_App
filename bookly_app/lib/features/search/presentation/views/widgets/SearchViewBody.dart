@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/SearchListView.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/SearchTextField.dart';
@@ -13,17 +12,15 @@ class SearchViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SearchTextField(),
-      
-         Padding(
-           padding: EdgeInsets.symmetric(vertical: 10 , horizontal: 24),
-           child: Text(
-                  'Search results',
-                  style: Styles.textstyle18,
-                ),
-         ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
+          child: Text(
+            'Search results',
+            style: Styles.textstyle18,
+          ),
+        ),
         SearchListView(),
       ],
     );
   }
 }
-

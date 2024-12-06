@@ -10,7 +10,7 @@ class BestSellerListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: 10,
-      itemBuilder: (context , index){
+      itemBuilder: (context, index) {
         return const BestSellerListViewItem();
       },
     );

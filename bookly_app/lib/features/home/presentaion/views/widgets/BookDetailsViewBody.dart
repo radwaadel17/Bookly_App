@@ -63,7 +63,6 @@ class BookDetailsViewBody extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-
             ],
           ),
         )
@@ -71,4 +70,3 @@ class BookDetailsViewBody extends StatelessWidget {
     );
   }
 }
-

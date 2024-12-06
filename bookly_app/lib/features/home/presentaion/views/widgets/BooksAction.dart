@@ -9,7 +9,7 @@ class BooksAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 24),
-      child:  Row(
+      child: Row(
         children: [
           Expanded(
               child: BooksActionBody(
@@ -23,7 +23,7 @@ class BooksAction extends StatelessWidget {
           )),
           Expanded(
               child: BooksActionBody(
-                fontSize: 15,
+            fontSize: 15,
             text: 'Free Preview',
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(12),
@@ -32,9 +32,7 @@ class BooksAction extends StatelessWidget {
             textColor: Colors.white,
             backgroundColor: Color.fromARGB(255, 255, 108, 108),
           )),
-          
         ],
-        
       ),
     );
   }

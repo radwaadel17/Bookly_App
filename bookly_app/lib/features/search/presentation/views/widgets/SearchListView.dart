@@ -10,7 +10,7 @@ class SearchListView extends StatelessWidget {
       child: ListView.builder(
         padding: EdgeInsets.zero,
         itemCount: 10,
-        itemBuilder: (context , index){
+        itemBuilder: (context, index) {
           return const BestSellerListViewItem();
         },
       ),
