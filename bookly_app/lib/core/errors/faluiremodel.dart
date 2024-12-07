@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 abstract class Faluire {
   String errorMessage;
@@ -7,6 +6,7 @@ abstract class Faluire {
 }
 
 class ServerFailure extends Faluire {
+  // ignore: non_constant_identifier_names
   factory ServerFailure.FromBadResponse(int? statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailure(errorMessage: response['error']['message']);
@@ -22,6 +22,7 @@ class ServerFailure extends Faluire {
     }
   }
   ServerFailure({required super.errorMessage});
+  // ignore: non_constant_identifier_names
   factory ServerFailure.FromDioError(DioException dioException) {
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
