@@ -27,8 +27,22 @@ class Homeviewrepimp implements Homeviewrepo {
   }
 
   @override
-  Future<Either<Faluire, List<BookModel>>> fetchBestSellerBooks() {
-    // TODO: implement fetchBestSellerBooks
-    throw UnimplementedError();
+  Future<Either<Faluire, List<BookModel>>> fetchBestSellerBooks() async {
+    try {
+      var data = await ApiService(Dio())
+          .getData(endPoint: 'Filtering=free-ebooks&q=subject:programming');
+      List<dynamic> jsonDataList = data['items'];
+      // ignore: unused_element
+      List<BookModel> books = [];
+      for (int i = 0; i < jsonDataList.length; i++) {
+        books.add(BookModel.fromJson(jsonDataList[i]));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.FromDioError(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
   }
 }
