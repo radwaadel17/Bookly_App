@@ -7,8 +7,8 @@ import 'package:dio/dio.dart';
 
 class Homeviewrepimp implements Homeviewrepo {
   @override
-  Future<Either<Faluire, List<BookModel>>> fetchNewstBooks() async{
-       try {
+  Future<Either<Faluire, List<BookModel>>> fetchNewstBooks() async {
+    try {
       var data = await ApiService(Dio())
           .getData(endPoint: 'Filtering=free-ebooks&q=subject:programming');
       List<dynamic> jsonDataList = data['items'];
@@ -19,10 +19,13 @@ class Homeviewrepimp implements Homeviewrepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.FromDioError(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
     }
   }
-  
+
   @override
   Future<Either<Faluire, List<BookModel>>> fetchBestSellerBooks() {
     // TODO: implement fetchBestSellerBooks
