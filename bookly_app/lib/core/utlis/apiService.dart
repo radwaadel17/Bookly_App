@@ -10,6 +10,4 @@ import 'package:dio/dio.dart';
     Response response = await dio.get('$_baseUrl$endPoint');
     return response.data;
   }
-
-
 }

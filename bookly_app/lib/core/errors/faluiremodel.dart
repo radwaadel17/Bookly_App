@@ -4,7 +4,6 @@ abstract class Faluire {
   String errorMessage;
   Faluire({required this.errorMessage});
 }
-
 class ServerFailure extends Faluire {
   // ignore: non_constant_identifier_names
   factory ServerFailure.FromBadResponse(int? statusCode, dynamic response) {
