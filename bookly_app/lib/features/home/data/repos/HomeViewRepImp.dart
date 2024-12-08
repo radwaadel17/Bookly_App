@@ -7,9 +7,11 @@ import 'package:dio/dio.dart';
 
 class Homeviewrepimp implements Homeviewrepo {
   @override
+  final ApiService apiService ;
+  Homeviewrepimp(this.apiService);
   Future<Either<Faluire, List<BookModel>>> fetchNewstBooks() async {
     try {
-      var data = await ApiService(Dio())
+      var data = await apiService
           .getData(endPoint: 'Filtering=free-ebooks&Sorting=newest&q=computer science');
       List<dynamic> jsonDataList = data['items'];
       // ignore: unused_element
@@ -29,7 +31,7 @@ class Homeviewrepimp implements Homeviewrepo {
   @override
   Future<Either<Faluire, List<BookModel>>> fetchBestSellerBooks() async {
     try {
-      var data = await ApiService(Dio())
+      var data = await apiService
           .getData(endPoint: 'Filtering=free-ebooks&q=subject:programming');
       List<dynamic> jsonDataList = data['items'];
       // ignore: unused_element
