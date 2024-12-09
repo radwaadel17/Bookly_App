@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:bookly_app/features/home/presentaion/manager/NewestBooksCubit/NewestBooksCubit.dart';
 import 'package:bookly_app/features/home/presentaion/manager/NewestBooksCubit/NewestBooksStates.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/CustomBookImage.dart';
@@ -12,7 +13,7 @@ class ListViewHorizontal extends StatelessWidget {
     return BlocBuilder<NewestbooksCubit, NewestbooksState>(
       builder: (context, state) {
         if (state is NewestbooksStatesFaluire) {
-          return Text('${state.errorMsg}');
+          return Text(state.errorMsg);
         } else if (state is NewestbooksStatesSuccsess) {
           return SizedBox(
             height: MediaQuery.of(context).size.height * 0.3,
