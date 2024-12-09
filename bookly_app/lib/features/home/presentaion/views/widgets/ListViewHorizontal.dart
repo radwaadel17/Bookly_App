@@ -11,25 +11,25 @@ class ListViewHorizontal extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NewestbooksCubit, NewestbooksState>(
       builder: (context, state) {
-        if(state is NewestbooksStateLoading){
-          return const Center(child: CircularProgressIndicator(),);
-        }
-        else if (state is NewestbooksStatesFaluire){
-          return  Text('${state.errorMsg}');
-        }
-        else {
+        if (state is NewestbooksStatesFaluire) {
+          return Text('${state.errorMsg}');
+        } else if (state is NewestbooksStatesSuccsess) {
           return SizedBox(
-          height: MediaQuery.of(context).size.height * 0.3,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16),
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return const CustomBookImage();
-                }),
-          ),
-        );
+            height: MediaQuery.of(context).size.height * 0.3,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: state.books.length,
+                  itemBuilder: (context, index) {
+                    return CustomBookImage(url: state.books[index].volumeInfo!.imageLinks!.thumbnail,);
+                  }),
+            ),
+          );
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         }
       },
     );
