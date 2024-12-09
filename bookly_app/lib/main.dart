@@ -1,4 +1,5 @@
 import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utlis/SimpleBlocObserver.dart';
 import 'package:bookly_app/core/utlis/approuter.dart';
 import 'package:bookly_app/core/utlis/serviceLocator.dart';
 import 'package:bookly_app/features/home/data/repos/HomeViewRepImp.dart';
@@ -9,7 +10,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   setup();
+  Bloc.observer = Simpleblocobserver();
   runApp(const BooklyApp());
+
 }
 
 class BooklyApp extends StatelessWidget {
@@ -22,7 +25,7 @@ class BooklyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => NewestbooksCubit(
             getIt<Homeviewrepimp>(),
-          ),
+          )..fetchNewstBooksMethod(),
         ),
         BlocProvider(
           create: (context) => BestSellerCubit(

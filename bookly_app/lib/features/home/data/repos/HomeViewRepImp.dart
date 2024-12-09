@@ -6,9 +6,9 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class Homeviewrepimp implements Homeviewrepo {
-  @override
   final ApiService apiService ;
   Homeviewrepimp(this.apiService);
+  @override
   Future<Either<Faluire, List<BookModel>>> fetchNewstBooks() async {
     try {
       var data = await apiService
