@@ -15,7 +15,7 @@ class ListViewOfBookDeatilsView extends StatelessWidget {
             itemCount: 10,
             itemBuilder: (context, index) {
              // return const CustomBookImage();
-             return Text('ay haga');
+             return const Text('ay haga');
             }),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utlis/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/BooksAction.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/CustomAppBarForBookDetailsView%20.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/CustomBookImage.dart';
@@ -7,8 +8,8 @@ import 'package:bookly_app/features/home/presentaion/views/widgets/RatingRow.dar
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key , required this.model});
+  final BookModel model;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -20,14 +21,14 @@ class BookDetailsViewBody extends StatelessWidget {
               const CustomAppBarForBookDetailsView(),
               SizedBox(
                   height: MediaQuery.of(context).size.height * 0.34,
-                 /*  child: const CustomBookImage() */),
+                  child: CustomBookImage(url: model.volumeInfo!.imageLinks!.thumbnail!,) ),
               const SizedBox(height: 43),
-              const Text(
-                'The Jungle Book',
+              Text(
+                model.volumeInfo!.title!,
                 style: Styles.textstyle30,
               ),
               Text(
-                'Rudyard Kipling',
+                model.volumeInfo!.authors[0],
                 style: Styles.textstyle18.copyWith(
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.normal,
