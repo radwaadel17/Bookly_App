@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class RatingRow extends StatelessWidget {
   const RatingRow({
     super.key,
+
   });
 
   @override

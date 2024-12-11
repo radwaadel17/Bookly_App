@@ -23,7 +23,7 @@ class ListViewHorizontal extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: state.books.length,
                   itemBuilder: (context, index) {
-                    return CustomBookImage(url: state.books[index].volumeInfo!.imageLinks!.thumbnail,);
+                    return CustomBookImage(url: state.books[index].volumeInfo!.imageLinks!.thumbnail!,);
                   }),
             ),
           );

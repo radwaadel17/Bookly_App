@@ -6,9 +6,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
     super.key,
-    this.url
+     required this.url
   });
-  final String? url;
+  final String url;
   @override
   Widget build(BuildContext context) {
     return Padding(
