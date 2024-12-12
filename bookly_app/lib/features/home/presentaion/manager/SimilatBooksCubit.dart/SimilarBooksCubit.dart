@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/data/repos/HomeViewRepImp.dart';
+// ignore: file_names
 import 'package:bookly_app/features/home/data/repos/HomeViewRepo.dart';
 import 'package:bookly_app/features/home/presentaion/manager/SimilatBooksCubit.dart/SimilarBooksStates.dart';
 import 'package:dartz/dartz.dart';
@@ -10,10 +10,12 @@ class Similarbookscubit  extends  Cubit<SimilarStates>{
   Future<void> fetchSimilarBooks({required String category}) async{
       emit(SimilarStatesLoading());
       var data = await homeviewrepo.fetchSimilarBooks(category: category);
+      //print(data);
        data.fold((faluire){
-         return right(SimilarStatesFaluire(faluire.errorMessage));
-       }, (books){
-          return left(SimilarStatesSuccsess(books));
+        emit(SimilarStatesFaluire(faluire.errorMessage));
+       },(books){
+         emit(SimilarStatesSuccsess(books));
        });
   }
 }
+

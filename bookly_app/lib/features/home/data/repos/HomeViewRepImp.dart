@@ -52,9 +52,8 @@ class Homeviewrepimp implements Homeviewrepo {
   Future<Either<Faluire, List<BookModel>>> fetchSimilarBooks({required String category}) async{
    try {
       var data = await apiService
-          .getData(endPoint: 'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$category');
+          .getData(endPoint: 'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:$category');
       List<dynamic> jsonDataList = data['items'];
-      // ignore: unused_element
       List<BookModel> books = [];
       for (int i = 0; i < jsonDataList.length; i++) {
         books.add(BookModel.fromJson(jsonDataList[i]));
