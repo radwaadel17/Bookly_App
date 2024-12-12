@@ -25,8 +25,11 @@ class SearchListView extends StatelessWidget {
             },
            );
           }
-          else {
+          else if (state is SearchStateLoading) {
             return const Center(child: CircularProgressIndicator(),);
+          }
+          else {
+            return const Center(child: Text('Please enter a book name to search'),);
           }
          
         },

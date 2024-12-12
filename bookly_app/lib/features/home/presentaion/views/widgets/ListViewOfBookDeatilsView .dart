@@ -31,7 +31,7 @@ class ListViewOfBookDeatilsView extends StatelessWidget {
                   onTap: (){
                     GoRouter.of(context).push(Approuter.KBookDetails , extra: state.books[index]);
                   },
-                  child: CustomBookImage(url: state.books[index].volumeInfo!.imageLinks!.thumbnail!,));
+                  child: CustomBookImage(url: state.books[index].volumeInfo!.imageLinks?.thumbnail!,));
                 }),
           ),
         );
