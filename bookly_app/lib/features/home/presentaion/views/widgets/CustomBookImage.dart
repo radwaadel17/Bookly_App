@@ -5,9 +5,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
     super.key,
-     required this.url
+     this.url
   });
-  final String url;
+  final String? url;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,8 +16,8 @@ class CustomBookImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: AspectRatio(
           aspectRatio: 2.7 / 4,
-          child: CachedNetworkImage(
-            imageUrl: url, fit: BoxFit.fill,
+          child: url == null? Icon(Icons.error) : CachedNetworkImage(
+            imageUrl: url!, fit: BoxFit.fill,
             )
         ),
       ),

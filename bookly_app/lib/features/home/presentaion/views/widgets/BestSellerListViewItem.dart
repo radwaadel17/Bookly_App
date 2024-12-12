@@ -23,7 +23,7 @@ class BestSellerListViewItem extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomBookImage(url: model.volumeInfo!.imageLinks!.thumbnail!,),
+              CustomBookImage(url: model.volumeInfo!.imageLinks?.thumbnail!,),
               const SizedBox(
                 width: 20,
               ),
@@ -42,7 +42,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    Text(model.volumeInfo!.authors[0], style: Styles.textstyle14),
+                    Text((model.volumeInfo!.authors?[0]) == null ? 'Unkown Author' : model.volumeInfo!.authors?[0], style: Styles.textstyle14),
                     const SizedBox(
                       height: 3,
                     ),

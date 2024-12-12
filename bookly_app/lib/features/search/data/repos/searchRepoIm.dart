@@ -17,7 +17,11 @@ class Searchrepoim implements Searchrepo {
       List<dynamic> dataList = data['items'];
       List<BookModel> books = [];
       for (int i = 0; i < dataList.length; i++) {
-        books.add(BookModel.fromJson(dataList[i]));
+        try {
+           books.add(BookModel.fromJson(dataList[i]));
+        } catch (e) {
+          books.add(BookModel.fromJson(dataList[i]));
+        }
       }
       return right(books);
     } catch (e) {

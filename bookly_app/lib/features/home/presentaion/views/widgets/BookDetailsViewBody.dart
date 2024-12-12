@@ -32,7 +32,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
               ),
               Text(
-                model.volumeInfo!.authors[0],
+                (model.volumeInfo!.authors?[0]) == null ? 'Unkown Author' : model.volumeInfo!.authors?[0],
                 style: Styles.textstyle18.copyWith(
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.normal,
