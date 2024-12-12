@@ -9,8 +9,8 @@ class CustomShimmerEffect extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
       child: Shimmer.fromColors(
-        baseColor: Colors.grey.withOpacity(0.7),// اللون الأساسي
-        highlightColor: Colors.grey.withOpacity(0.4), // لون اللمعان
+        baseColor: Colors.grey.withOpacity(0.7),
+        highlightColor: Colors.grey.withOpacity(0.4), 
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -28,9 +28,9 @@ class CustomShimmerEffect extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 12), // مسافة بين الصورة والنص
+            const SizedBox(width: 12), 
 
-            // نصوص الـ Shimmer
+          
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
