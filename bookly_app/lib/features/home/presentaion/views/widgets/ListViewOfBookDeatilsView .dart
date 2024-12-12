@@ -1,5 +1,5 @@
+// ignore: file_names
 import 'package:bookly_app/core/utlis/approuter.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentaion/manager/SimilatBooksCubit.dart/SimilarBooksCubit.dart';
 import 'package:bookly_app/features/home/presentaion/manager/SimilatBooksCubit.dart/SimilarBooksStates.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/CustomBookImage.dart';

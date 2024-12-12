@@ -1,5 +1,4 @@
-import 'package:bookly_app/core/utlis/assetsmodel.dart';
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -18,7 +17,7 @@ class CustomBookImage extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 2.7 / 4,
           child: CachedNetworkImage(
-            imageUrl: url! , fit: BoxFit.fill,
+            imageUrl: url, fit: BoxFit.fill,
             )
         ),
       ),
