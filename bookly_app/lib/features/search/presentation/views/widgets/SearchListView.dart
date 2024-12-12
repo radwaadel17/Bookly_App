@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:bookly_app/core/widgets/customShimmerEffect.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/BestSellerListViewItem.dart';
 import 'package:bookly_app/features/search/presentation/manager/SearchCubit/SearchCubit.dart';
 import 'package:bookly_app/features/search/presentation/manager/SearchCubit/SearchStates.dart';
@@ -26,7 +27,13 @@ class SearchListView extends StatelessWidget {
            );
           }
           else if (state is SearchStateLoading) {
-            return const Center(child: CircularProgressIndicator(),);
+            return Expanded(
+              child: ListView.builder(
+                itemCount: 10,
+                itemBuilder: (context , index){
+                     return const CustomShimmerEffect();
+              }),
+            );
           }
           else {
             return const Center(child: Text('Please enter a book name to search'),);

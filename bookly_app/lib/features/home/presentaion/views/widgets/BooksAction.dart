@@ -1,8 +1,6 @@
-import 'package:bookly_app/core/utlis/approuter.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/BooksActionBody.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
@@ -39,7 +37,7 @@ class BooksAction extends StatelessWidget {
               bottomRight: Radius.circular(12),
             ),
             textColor: Colors.white,
-            backgroundColor: Color.fromARGB(255, 255, 108, 108),
+            backgroundColor:const  Color.fromARGB(255, 255, 108, 108),
           )),
         ],
       ),

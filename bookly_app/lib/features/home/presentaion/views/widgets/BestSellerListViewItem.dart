@@ -56,7 +56,9 @@ class BestSellerListViewItem extends StatelessWidget {
                         ),
                         const Spacer(),
                         const RatingRow()
+                        
                       ],
+
                     )
                   ],
                 ),
