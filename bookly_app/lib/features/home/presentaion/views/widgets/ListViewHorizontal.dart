@@ -1,9 +1,11 @@
 // ignore: file_names
+import 'package:bookly_app/core/utlis/approuter.dart';
 import 'package:bookly_app/features/home/presentaion/manager/NewestBooksCubit/NewestBooksCubit.dart';
 import 'package:bookly_app/features/home/presentaion/manager/NewestBooksCubit/NewestBooksStates.dart';
 import 'package:bookly_app/features/home/presentaion/views/widgets/CustomBookImage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class ListViewHorizontal extends StatelessWidget {
   const ListViewHorizontal({super.key});
@@ -23,7 +25,11 @@ class ListViewHorizontal extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: state.books.length,
                   itemBuilder: (context, index) {
-                    return CustomBookImage(url: state.books[index].volumeInfo!.imageLinks!.thumbnail!,);
+                    return GestureDetector(
+                      onTap: (){
+                        GoRouter.of(context).push(Approuter.KBookDetails , extra: state.books[index]);
+                      },
+                      child: CustomBookImage(url: state.books[index].volumeInfo!.imageLinks!.thumbnail!,));
                   }),
             ),
           );

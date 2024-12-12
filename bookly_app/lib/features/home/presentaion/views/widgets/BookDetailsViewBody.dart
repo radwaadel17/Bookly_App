@@ -23,9 +23,13 @@ class BookDetailsViewBody extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.34,
                   child: CustomBookImage(url: model.volumeInfo!.imageLinks!.thumbnail!,) ),
               const SizedBox(height: 43),
-              Text(
-                model.volumeInfo!.title!,
-                style: Styles.textstyle30,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  model.volumeInfo!.title!,
+                  style: Styles.textstyle30,
+                  textAlign: TextAlign.center,
+                ),
               ),
               Text(
                 model.volumeInfo!.authors[0],
@@ -60,7 +64,7 @@ class BookDetailsViewBody extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              ListViewOfBookDeatilsView(),
+              const ListViewOfBookDeatilsView(),
               const SizedBox(
                 height: 40,
               ),
